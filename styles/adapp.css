@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* мобильные устройства */
+@media (max-width: 768px) {
+    .top-bat {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .menu-item {
+        width: 100%;
+        text-align: left;
+    }
+
+    .icons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        display: block;
+        padding: 10px;
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .main-banner {
+        width: 100%;
+    }
+
+    .product-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .side-content {
+        flex-direction: column;
+    }
+
+    .icons2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon2 {
+        margin-bottom: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/*маленькие экранов */
+@media (max-width: 480px) {
+    .logo img {
+        max-height: 40px;
+    }
+
+    .top-bat {
+        font-size: 12px;
+    }
+
+    .menu {
+        font-size: 14px;
+    }
+
+    .slider {
+        height: 200px;
+    }
+
+    .icons img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .product-card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .product-card .product-info {
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+    .icons2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; 
+        align-items: center;
+    }
+
+    .icon2 {
+        margin-bottom: 0; 
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card-container { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px; 
+    }
+
+    .product-card {
+        width: 100%; 
+        margin-bottom: 0; 
+    }
+
+    .product-card .product-info {
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+    .slider {
+        margin-bottom: 5px; 
+        }
+
+    .side-content {
+        margin-top: 10px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .side-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}

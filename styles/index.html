@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="adapp.css">
+</head>
+<body>
+    <div class="top-bat">
+        <span class="red">Ваш район доставки Бишкек</span>
+        <span>
+           <p>Телефон 000000000</p>
+           <i class='bx bxs-phone'></i>
+        </span>
+    </div>
+    <header class="top-bar fixed-header">
+    <div class="header">
+        <div class="logo">
+            <img src="найк.png" alt="Логотип">
+        </div>
+        <header>
+        <nav class="menu"> 
+            <div class="menu-item">
+                <a href="#" class="new">НОВИНКИ</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">ЖЕНСКАЯ ОДЕЖДА</a>
+                <div class="submenu">
+                    <a href="#">Платья</a>
+                    <a href="#">Юбки</a>
+                    <a href="#">Блузки</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">МУЖСКАЯ ОДЕЖДА</a>
+                <div class="submenu">
+                    <a href="#">Костюмы</a>
+                    <a href="#">Рубашки</a>
+                    <a href="#">Джинсы</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">БОЛЬШИЕ РАЗМЕРЫ</a>
+                <div class="submenu">
+                    <a href="#">Куртки</a>
+                    <a href="#">Штаны</a>
+                    <a href="#">Футболки</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#" class="sale">СКИДКИ</a>
+            </div>
+        </nav>
+        </header>
+        <div class="icons">
+            <img src="images/menu-regular-24.png" alt="Меню" id="menu-icon">
+            <img src="images/exit-solid-24.png" alt="Вход" id="login-icon">
+            <img src="images/basket-solid-24.png" alt="Корзина" id="cart-icon">
+        </div>
+    </div>
+</header>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-cart-modal">&times;</span>
+            <h2>Ваша корзина</h2>
+            <div id="cart-items"></div>
+            <p>Корзина пока пуста</p>
+        <button id="checkout-button">Оформить заказ</button>
+        </div>
+        </div>
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-checkout-modal">&times;</span>
+            <h2>Оформление заказа</h2>
+            <form id="checkout-form">
+                <label for="address">Адрес доставки:</label>
+                <input type="text" id="address" name="address" required placeholder="Введите адрес">
+                <label for="phone">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Введите номер телефона">
+                <button type="submit">Подтвердить заказ</button>
+            </form>
+        </div>
+    </div>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-login-modal">&times;</span>
+            <h2>Вход или регистрация</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Вход</button>
+                <button type="button" onclick="registerFunction()">Регистрация</button>
+            </form>
+        </div>
+    </div>
+    <div id="dropdown-menu" style="display: none;">
+        <div class="dropdown-menu-item"><a href="#">о компании</a></div>
+        <div class="dropdown-menu-item"><a href="#">контакты</a></div>
+        <div class="dropdown-menu-item"><a href="#">доставка и оплата</a></div>
+    </div>
+    <div class="container">
+        <div class="main-banner">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="images/hhhh.jpg" alt="Main Collection 1">
+                    </div>
+                    <div class="slide">
+                        <img src="images/hhhh.jpg" alt="Main Collection 2">
+                    </div>
+                    <div class="slide">
+                        <img src="images/hhhh.jpg" alt="Main Collection 3">
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button onclick="prevSlide()">&#10094;</button>
+                <button onclick="nextSlide()">&#10095;</button>
+            </div>
+            <div class="overlay">Новая Коллекция 2020</div>
+            <div class="button">КУПИТЬ</div>
+        </div>
+        <div class="side-content">
+            <div class="item">
+                <img src="куртка 1.jpg" alt="Try at Home">
+                <div class="label">ПРИМЕРКА НА ДОМ</div>
+            </div>
+            <div class="item">
+                <img src="images/куртка 1.jpg" alt="Try at Home">
+                <div class="label">ИЗ ИТАЛИИ</div>
+            </div>
+            <div class="item">
+                <img src="images/куртка 1.jpg" alt="Try at Home">
+                <div class="label">ИЗ ТУРЦИИ</div>
+            </div>
+            <div class="item">
+                <img src="images/штаны 1.jpg" alt="Small Size">
+                <div class="label">SMALLSIZE</div>
+            </div>
+        </div>
+    </div>
+    <div class="icon-section2">
+        <h2>ТО, ЧТО АКТУАЛЬНО В ЭТОМ СЕЗОНЕ</h2>
+        <div class="icons2">
+            <div class="icon2">
+                <img src="images/t-shirt-solid-72.png" alt="Рубашки">
+                <p>рубашки</p>
+            </div>
+            <div class="icon2">
+                <img src="images/t-shirt-solid-72.png" alt="Брюки">
+                <p>брюки</p>
+            </div>
+            <div class="icon2">
+                <img src="images/t-shirt-solid-72.png" alt="Жакеты">
+                <p>жакеты</p>
+            </div>
+            <div class="icon2">
+                <img src="images/t-shirt-solid-72.png" alt="Платья">
+                <p>платья</p>
+            </div>
+            <div class="icon2">
+                <img src="images/t-shirt-solid-72.png" alt="Куртки">
+                <p>куртки</p>
+            </div>
+            <div class="icon2">
+                <img src="images/t-shirt-solid-72.png" alt="Юбки">
+                <p>юбки</p>
+            </div>
+        </div>
+    </div>
+    <div class="product-section">
+        <h2>РЕКОМЕНДУЕМ</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x250" alt="Свитер">
+                <div class="product-info">
+                    <p>свитер </p>
+                    <p>2 200 сом</p>
+                    <p>Размеры: M</p>
+                    <button class="buy-button" onclick="addToCart('свитер', 2200)">КУПИТЬ</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x250" alt="Костюм">
+                <div class="product-info">
+                    <p>костюм </p>
+                    <p>7 800 сом</p>
+                    <p>Размеры: 38, 40</p>
+                    <button class="buy-button" onclick="addToCart('костюм', 7800)">КУПИТЬ</button>
+                </div>
+            </div>
+           
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x250" alt="Пальто">
+                <div class="product-info">
+                    <p>пальто </p>
+                    <p>14 300 сом</p>
+                    <p>Размеры: 36, 38, 40, 42</p>
+                    <button class="buy-button" onclick="addToCart('пальто', 14300)">КУПИТЬ</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <img src="https://via.placeholder.com/200x250" alt="Пальто">
+                <div class="product-info">
+                    <p>пальто </p>
+                    <p>14 300 сом</p>
+                    <p>Размеры: 36, 38, 40, 42</p>
+                    <button class="buy-button" onclick="addToCart('пальто', 14300)">КУПИТЬ</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x250" alt="Пальто">
+                <div class="product-info">
+                    <p>пальто</p>
+                    <p>14 300 сом</p>
+                    <p>Размеры: 36, 38, 40, 42</p>
+                    <button class="buy-button" onclick="addToCart('пальто', 14300)">КУПИТЬ</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x250" alt="Пальто">
+                <div class="product-info">
+                    <p>пальто </p>
+                    <p>14 300 сом</p>
+                    <p>Размеры: 36, 38, 40, 42</p>
+                    <button class="buy-button" onclick="addToCart('пальто', 14300)">КУПИТЬ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Наши контакты</h3>
+                <p>Телефон: +996 501358265</p>
+                <p>Email: tripleggg@gmail.kg</p>
+                <p>Адрес: г. Бишкек, ул.Абдраева, 198/2</p>
+            </div>
+            <div class="footer-section">
+                <h3>Предложения</h3>
+                <form id="feedback-form">
+                    <label for="feedback-name">Ваше имя:</label>
+                    <input type="text" id="feedback-name" name="name" placeholder="Введите имя" required>
+                    <label for="feedback-message">Ваше сообщение:</label>
+                    <textarea id="feedback-message" name="message" placeholder="Введите сообщение" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    
+<script src="adapp.js"></script>
+    <script src="script.js"></script>    
+    </body>
+</html>    

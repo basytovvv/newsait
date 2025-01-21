@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/market.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="top-bat">
+        <span class="red">Ваш район доставки Бишкек</span>
+        <span>
+           <p>Телефон 000000000</p>
+           <i class='bx bxs-phone'></i>
+        </span>
+    </div>
+    <header class="top-bar fixed-header">
+    <div class="header">
+        <div class="logo">
+            <img src="images/найк.png" alt="Логотип">
+        </div>
+        <header>
+        <nav class="menu"> 
+            <div class="menu-item">
+                <a href="index.html">О КОМПАНИИ</a>    
+            </div>
+            <div class="menu-item">
+                <a href="index.html">ГЛАВНАЯ</a>
+            </div>
+            <div class="menu-item">
+                <a href="index.html">ДОСТАВКА</a>
+            </div>
+        </nav>
+        </header>
+        <div class="icons">
+            <img src="images/menu-regular-24.png" alt="Меню" id="menu-icon">
+            <img src="images/exit-solid-24.png" alt="Вход" id="login-icon">
+            <img src="images/basket-solid-24.png" alt="Корзина" id="cart-icon">
+        </div>
+    </div>
+</header>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-cart-modal">&times;</span>
+            <h2>Ваша корзина</h2>
+            <div id="cart-items"></div>
+            <p>Корзина пока пуста</p>
+        <button id="checkout-button">Оформить заказ</button>
+        </div>
+        </div>
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-checkout-modal">&times;</span>
+            <h2>Оформление заказа</h2>
+            <form id="checkout-form">
+                <label for="address">Адрес доставки:</label>
+                <input type="text" id="address" name="address" required placeholder="Введите адрес">
+                <label for="phone">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Введите номер телефона">
+                <button type="submit">Подтвердить заказ</button>
+            </form>
+        </div>
+    </div>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-login-modal">&times;</span>
+            <h2>Вход или регистрация</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Вход</button>
+                <button type="button" onclick="registerFunction()">Регистрация</button>
+            </form>
+        </div>
+    </div>
+    <div id="dropdown-menu" style="display: none;">
+        <div class="dropdown-menu-item"><a href="#">о компании</a></div>
+        <div class="dropdown-menu-item"><a href="#">контакты</a></div>
+        <div class="dropdown-menu-item"><a href="#">доставка и оплата</a></div>
+    </div>
+    <div class="catalog">
+        <h2>Каталог</h2>
+        
+        <h3>Новинки</h3>
+        <div class="catalog-items">
+            <div class="catalog-item">
+                <img src="images/item1.jpg" alt="Товар 1">
+                <p>Товар 1</p>
+                <p>Цена: 1000 сом</p>
+                <button data-name="Товар 1" data-price="1000">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item2.jpg" alt="Товар 2">
+                <p>Товар 2</p>
+                <p>Цена: 2000 сом</p>
+                <button data-name="Товар 2" data-price="2000">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item3.jpg" alt="Товар 3">
+                <p>Товар 3</p>
+                <p>Цена: 3000 сом</p>
+                <button data-name="Товар 3" data-price="3000">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item16.jpg" alt="Товар 4">
+                <p>Товар 4</p>
+                <p>Цена: 4000 сом</p>
+                <button data-name="Товар 4" data-price="4000">Добавить в корзину</button>
+            </div>
+        </div>
+        
+        <h3>Женская одежда</h3>
+        <div class="catalog-items">
+            <div class="catalog-item">
+                <img src="images/item4.jpg" alt="Платье 1">
+                <p>Платье 1</p>
+                <p>Цена: 1500 сом</p>
+                <button data-name="Платье 1" data-price="1500">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item5.jpg" alt="Юбка 1">
+                <p>Юбка 1</p>
+                <p>Цена: 1200 сом</p>
+                <button data-name="Юбка 1" data-price="1200">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item6.jpg" alt="Блузка 1">
+                <p>Блузка 1</p>
+                <p>Цена: 1300 сом</p>
+                <button data-name="Блузка 1" data-price="1300">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item17.jpg" alt="Платье 2">
+                <p>Платье 2</p>
+                <p>Цена: 1600 сом</p>
+                <button data-name="Платье 2" data-price="1600">Добавить в корзину</button>
+            </div>
+        </div>
+        
+        <h3>Мужская одежда</h3>
+        <div class="catalog-items">
+            <div class="catalog-item">
+                <img src="images/item7.jpg" alt="Костюм 1">
+                <p>Костюм 1</p>
+                <p>Цена: 2500 сом</p>
+                <button data-name="Костюм 1" data-price="2500">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item8.jpg" alt="Рубашка 1">
+                <p>Рубашка 1</p>
+                <p>Цена: 1100 сом</p>
+                <button data-name="Рубашка 1" data-price="1100">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item9.jpg" alt="Джинсы 1">
+                <p>Джинсы 1</p>
+                <p>Цена: 1800 сом</p>
+                <button data-name="Джинсы 1" data-price="1800">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item18.jpg" alt="Костюм 2">
+                <p>Костюм 2</p>
+                <p>Цена: 2600 сом</p>
+                <button data-name="Костюм 2" data-price="2600">Добавить в корзину</button>
+            </div>
+        </div>
+        
+        <h3>Большие размеры</h3>
+        <div class="catalog-items">
+            <div class="catalog-item">
+                <img src="images/item10.jpg" alt="Куртка 1">
+                <p>Куртка 1</p>
+                <p>Цена: 3000 сом</p>
+                <button data-name="Куртка 1" data-price="3000">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item11.jpg" alt="Штаны 1">
+                <p>Штаны 1</p>
+                <p>Цена: 1400 сом</p>
+                <button data-name="Штаны 1" data-price="1400">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item12.jpg" alt="Футболка 1">
+                <p>Футболка 1</p>
+                <p>Цена: 900 сом</p>
+                <button data-name="Футболка 1" data-price="900">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item19.jpg" alt="Куртка 2">
+                <p>Куртка 2</p>
+                <p>Цена: 3100 сом</p>
+                <button data-name="Куртка 2" data-price="3100">Добавить в корзину</button>
+            </div>
+        </div>
+        
+        <h3>Скидки</h3>
+        <div class="catalog-items">
+            <div class="catalog-item">
+                <img src="images/item13.jpg" alt="Товар со скидкой 1">
+                <p>Товар со скидкой 1</p>
+                <p>Цена: 800 сом</p>
+                <button data-name="Товар со скидкой 1" data-price="800">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item14.jpg" alt="Товар со скидкой 2">
+                <p>Товар со скидкой 2</p>
+                <p>Цена: 700 сом</п>
+                <button data-name="Товар со скидкой 2" data-price="700">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item15.jpg" alt="Товар со скидкой 3">
+                <p>Товар со скидкой 3</п>
+                <п>Цена: 600 сом</п>
+                <button data-name="Товар со скидкой 3" data-price="600">Добавить в корзину</button>
+            </div>
+            <div class="catalog-item">
+                <img src="images/item20.jpg" alt="Товар со скидкой 4">
+                <п>Товар со скидкой 4</п>
+                <п>Цена: 500 сом</п>
+                <button data-name="Товар со скидкой 4" data-price="500">Добавить в корзину</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Наши контакты</h3>
+                <p>Телефон: +996 501358265</p>
+                <p>Email: tripleggg@gmail.kg</p>
+                <p>Адрес: г. Бишкек, ул.Абдраева, 198/2</p>
+            </div>
+            <div class="footer-section">
+                <h3>Предложения</h3>
+                <form id="feedback-form">
+                    <label for="feedback-name">Ваше имя:</label>
+                    <input type="text" id="feedback-name" name="name" placeholder="Введите имя" required>
+                    <label for="feedback-message">Ваше сообщение:</label>
+                    <textarea id="feedback-message" name="message" placeholder="Введите сообщение" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    
+<script src="adapp.js"></script>
+    <script src="script.js"></script>    
+    </body>
+</html>

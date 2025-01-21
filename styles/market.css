@@ -1,0 +1,375 @@
+.top-bat {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+.top-bar span {
+    display: flex;
+    align-items: center;
+}
+
+.top-bat span.red {
+    position: relative;
+    padding-left: 20px;
+}
+
+.top-bat span.red::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+    font-size: 16px;
+    justify-content: center;
+    position: relative;
+    margin-top: 70px; 
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.menu a:hover {
+    color: red;
+}
+
+.menu a.new {
+    display: flex;
+    align-items: center;
+}
+.menu a.new::before {
+    content: "NEW";
+    display: inline-block;
+    font-size: 10px;
+    color: white;
+    background-color: orange;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin-right: 5px;
+}
+.menu a.sale {
+    display: flex;
+    align-items: center;
+    color: red;
+    font-weight: bold;
+}
+.menu a.sale::before {
+    content: "SALE";
+    display: inline-block;
+    font-size: 10px;
+    color: white;
+    background-color: green;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin-right: 5px;
+}
+.menu a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+}
+.menu a:hover::after {
+    width: 100%;
+}
+.menu-item {
+    position: relative;
+}
+.menu-item:hover .submenu {
+    display: block;
+}
+.menu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.menu .submenu a {
+    display: block;
+    color: black;
+    padding: 5px 0;
+    text-decoration: none;
+}
+.menu .submenu a:hover {
+    color: red;
+}
+.icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+.icons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+.close-btn:hover {
+    color: darkred;
+}
+
+#checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#checkout-form input, #checkout-form button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#dropdown-menu {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50px;
+    right: 15px;
+    z-index: 1001;
+    display: none;
+}
+.dropdown-menu-item a {
+    display: block;
+    color: black;
+    padding: 5px 0;
+    text-decoration: none;
+}
+.dropdown-menu-item a:hover {
+    color: red;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+}
+
+.footer {
+    background-color: #f4f4f4;
+    padding: 30px 20px;
+    color: #333;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1 1 30%;
+    min-width: 250px;
+}
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #000;
+}
+.footer-section p,
+.footer-section li {
+    margin: 5px 0;
+}
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+.footer-section ul li a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+    color: #000;
+}
+#feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#feedback-form input,
+#feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+#feedback-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#feedback-form button:hover {
+    background-color: #555;
+}
+
+header.fixed-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.catalog {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.catalog h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.catalog h3 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 22px;
+    color: #333;
+}
+
+.catalog-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.catalog-item {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.catalog-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.catalog-item p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.catalog-item button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.catalog-item button:hover {
+    background-color: #555;
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
